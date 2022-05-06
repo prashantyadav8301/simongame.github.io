@@ -14,6 +14,14 @@ $(document).keydown(function () {
     }
 });
 
+$(".a").on("click", function () {
+    if (!started) {
+        $("#level-title").text(`Level ${level}`);
+        nextSequence();
+        started = true
+    }
+});
+
 function nextSequence() {
     userClickedPattern = [];
     var randomNumber = Math.floor(Math.random() * 4);
@@ -73,7 +81,7 @@ function checkAnswer(currentLevel) {
     }
 }
 
-function startOver(){
+function startOver() {
     level = 0;
     gamePattern = [];
     started = false;
